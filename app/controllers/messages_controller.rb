@@ -9,4 +9,9 @@ class MessagesController < ApplicationController
       render :json => message.errors, :status => :unprocessable_entity
     end
   end
+
+  def index
+    messages = Message.all
+    render :json => messages
+  end
 end

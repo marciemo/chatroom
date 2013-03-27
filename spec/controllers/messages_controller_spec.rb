@@ -35,5 +35,29 @@ describe MessagesController do
         response.body.should eq Message.create(invalid_attributes).errors.to_json
       end
     end
+
+
+    context 'GET index' do
+      before {Message.create({:text => 'test'})}
+      before {get :index}
+
+      it {should respond_with 200}
+      it {should respond_with_content_type :json}
+      it 'responds with a json representation of all the words' do
+        response.body.should eq Message.all.to_json
+      end
+    end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def index
-    messages = Message.all
+    messages = Room.find(params[:room_id]).messages
     render :json => messages
   end
 end

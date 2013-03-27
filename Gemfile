@@ -17,6 +17,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'pry'
   gem 'pry-debugger'
+  gem 'factory_girl'
 end
 
 
